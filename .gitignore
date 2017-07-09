@@ -1,0 +1,4 @@
+__*.py
+__pycache__
+.idea
+.DS_STORE
