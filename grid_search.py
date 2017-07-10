@@ -5,7 +5,7 @@ def grid_search(clf_name, X_train, y_train, est, param_grid):
     # Setup GridSearch
     gs = GridSearchCV(estimator=est,
                       param_grid=param_grid,
-                      scoring='roc_auc',
+                      scoring='accuracy',
                       cv=10,
                       n_jobs=-1)
     gs = gs.fit(X_train, y_train)
@@ -47,7 +47,7 @@ def grid_search_dt(X_train, y_train, est):
 
 
 def grid_search_rf(X_train, y_train, est):
-    param_range = [10, 50, 100, 150, 200]
+    param_range = [80, 90, 100, 110, 120, 130, 140, 150]
     param_grid = [{'n_estimators': param_range}]
 
     grid_search('rf', X_train, y_train, est, param_grid)
