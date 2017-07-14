@@ -3,7 +3,7 @@ import numpy as np
 from sklearn.model_selection import learning_curve
 
 
-def plot_learning_curve(X_train, y_train, est):
+def plot_learning_curve(X_train, y_train, est, title):
     train_sizes, train_scores, test_scores = \
         learning_curve(estimator=est,
                        X=X_train,
@@ -37,6 +37,7 @@ def plot_learning_curve(X_train, y_train, est):
                      alpha=0.15, color='green')
 
     plt.grid()
+    plt.title(title)
     plt.xlabel('Number of training samples')
     plt.ylabel('Accuracy')
     plt.legend(loc='lower right')
